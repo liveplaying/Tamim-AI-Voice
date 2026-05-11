@@ -1,0 +1,12 @@
+{
+  "name": "DocuVoice Pro",
+  "description": "Professional AI-powered YouTube documentary audio production and editing suite.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "TTS",
+    "Audio Editing",
+    "Firebase"
+  ]
+}

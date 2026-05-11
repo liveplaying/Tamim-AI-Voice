@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "VoiceProfile": {
+      "title": "Voice Profile",
+      "description": "Custom voice settings for TTS generation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "voiceName": { "type": "string", "enum": ["Puck", "Charon", "Kore", "Fenrir", "Zephyr"] },
+        "pitch": { "type": "number" },
+        "speed": { "type": "number" },
+        "volume": { "type": "number" },
+        "tone": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "voiceName"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "A documentary audio project",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "script": { "type": "string" },
+        "audioUrl": { "type": "string" },
+        "profileId": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title"]
+    }
+  },
+  "firestore": {
+    "voiceProfiles": {
+      "schema": "VoiceProfile",
+      "description": "Stores user created voice profiles"
+    },
+    "projects": {
+      "schema": "Project",
+      "description": "Stores user documentary projects"
+    }
+  }
+}
